@@ -1,4 +1,4 @@
-const animaisSection = document.getElementById('animais');
+/* const animaisSection = document.getElementById('animais');
 console.log(animais);
 
 const primeiroUl = document.querySelector('ul');
@@ -41,3 +41,51 @@ console.log(h2Animais);
 
 const paragrafos = document.querySelectorAll('p');
 console.log(paragrafos[-- paragrafos.length]);
+
+const titulos = document.getElementsByClassName('titulo');
+const titulosArray = Array.from(titulos);
+
+titulosArray.forEach(function(item){
+    console.log(item);
+});
+const imgs = document.querySelectorAll('img');
+
+imgs.forEach((item) => {
+    console.log(item);
+});
+*/
+
+
+
+
+
+
+
+// Como corrigir os erros abaixo:
+const imgs = document.querySelectorAll('img');
+
+imgs.forEach((item, index) => {
+    console.log(item, index);
+});
+
+let i = 0;
+imgs.forEach(() => {
+    console.log(i++);
+});
+
+imgs.forEach(() => i++);
+
+// Mostre no console cada parágrado do site
+
+const pDoSite = document.querySelectorAll('p');
+
+console.log(pDoSite);
+
+
+pDoSite.forEach((item) => {
+    console.log(item);
+});
+// Mostre o texto dos parágrafos no console
+pDoSite.forEach((item) => {
+    console.log(item.innerText);
+});
