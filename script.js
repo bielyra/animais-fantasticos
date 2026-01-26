@@ -152,7 +152,6 @@ todasImgs.forEach((item) => {
 
 const linkExterno = document.querySelector('a[href^="http"]');
 linkExterno.setAttribute('href', 'https://www.google.com');
-*/
 // Dimensões e Distâncias 
 const larguraTela = window.innerWidth;
 const alturaTela = window.innerHeight;
@@ -160,9 +159,9 @@ const alturaTela = window.innerHeight;
 if(larguraTela>= 48){
     if(alturaTela<48){
     }
-console.log('Possue o tamanho mínimo recomendado pelo google');}else{
-    console.log('A tela não possue altura nem largura mínima recomendada pelo google');
-}
+    console.log('Possue o tamanho mínimo recomendado pelo google');}else{
+        console.log('A tela não possue altura nem largura mínima recomendada pelo google');
+    }
 console.log(`Possue ${larguraTela} de largura e ${alturaTela} de altura`);
 
 
@@ -198,7 +197,7 @@ window.onload = function(){
 // Verifique se os links da página possuem
 // o mínimo recomendado para telas utilizadas
 // com o dedo. (48px/48px de acordo com o google)
- const links = document.querySelectorAll('a');
+const links = document.querySelectorAll('a');
 console.log(links);
 // tentar arrumar esse foreach e o if... organizar pra poder mostrar no console se cada link possui ou não o tamanho recomendado e depois corrigir o tamanho dos links no css
 links.forEach((link) => {
@@ -208,8 +207,100 @@ links.forEach((link) => {
         console.log(item, 'Possui o tamanho recomendado');
     } else {
         console.log(item, 'Não possui o tamanho recomendado');
-    }    
+}    
 
 // Se o browser for menor que 720px,
 // adicione a classe menu-mobile ao menu
 
+const browserSmall = window.matchMedia('(max-width: 720px)').matches;
+
+if (browserSmall){
+    const menu = document.querySelector('.menu');
+    menu.classList.add('menu-mobile');
+}
+
+*/
+
+// 0307 - Eventos
+
+const h1 = document.querySelector('h1');
+
+function callback(event) {
+  console.log(event.type, event);
+}
+
+//h1.addEventListener('click', callback);
+//h1.addEventListener('mousemove', callback);
+//window.addEventListener('scroll', callback);
+//window.addEventListener('resize', callback);
+
+function handleKeyboard(event) {
+    if(event.key === 'a'){
+        document.body.classList.toggle('azul');
+    }
+    
+    //console.log(event.key);
+}
+document.addEventListener('keydown', handleKeyboard);
+//window.addEventListener('keydown', callback);
+
+
+const imgs = document.querySelectorAll('img');
+
+function imgSrc(event) {
+  const src = event.currentTarget.getAttribute('src');
+  console.log(src);
+}
+
+imgs.forEach((img) => {
+  img.addEventListener('click', imgSrc);
+});
+
+// Quando o usuário clicar nos links internos do site,
+// adicione a classe ativo ao item clicado e remova dos
+// demais itens caso eles possuam a mesma. Previna
+// o comportamento padrão desses links
+
+const linkInterno = document.querySelectorAll('a[href^="#"]');
+
+function handleLink(event) {
+    console.log(event);
+    event.preventDefault();
+    //event.currentTarget.classList.add('ativo');
+    linkInterno.forEach((link) => {
+        link.classList.remove('ativo');
+    });
+    event.currentTarget.classList.add('ativo');
+}
+
+
+linkInterno.forEach((link) => {
+    link.addEventListener('click', handleLink);
+});
+        
+
+// Selecione todos os elementos do site começando a partir do body,
+// ao clique mostre exatamente quais elementos estão sendo clicados
+
+
+const todosElementos = document.querySelectorAll('body *');
+
+function handleElemento(event){
+    //console.log(event.currentTarget);
+    //event.currentTarget.remove();
+}
+
+
+todosElementos.forEach((elemento) => {
+    elemento.addEventListener('click', handleElemento);{
+    }
+});
+
+console.log(todosElementos);
+
+
+// Utilizando o código anterior, ao invés de mostrar no console,
+// remova o elemento que está sendo clicado, o método remove() remove um elemento
+
+
+// Se o usuário clicar na tecla (t), aumente todo o texto do site. 
