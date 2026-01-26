@@ -1,4 +1,4 @@
-# JavaScript Completo
+# Projeto do Curso JavaScript Completo: Site Animais Fantásticos
 Aulas e atividades do curso JavaScript para inciantes da Origamid.
 
 <h2>Organização: </h2>
