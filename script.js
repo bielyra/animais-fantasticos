@@ -304,3 +304,39 @@ console.log(todosElementos);
 
 
 // Se o usuário clicar na tecla (t), aumente todo o texto do site. 
+
+function handleClickT(event){
+    console.log(event.key);
+    
+    if(event.key === 't'){
+        document.documentElement.classList.toggle('textomaior');
+    }
+}
+
+window.addEventListener('keydown', handleClickT);
+
+const menu = document.querySelector('.menu');
+
+menu.outerHTML; // todo o html do elemento
+menu.innerHTML; // html interno
+menu.innerText; // texto, sem tags
+
+//menu.innerText = '<p>Texto</p>'; // a tag vai como texto
+//menu.innerHTML = '<p>Texto</p>'; // a tag é renderizada
+ const lista = document.querySelector('.animais-lista');
+
+ console.log(lista.children[--lista.children.length]);
+ console.log(lista.querySelector('li:last-child'));
+
+ console.log(lista.previousSibling);
+
+ const contato = document.querySelector('.contato');
+ const titulo = contato.querySelector('.titulo');
+
+
+//contato.appendChild(lista); // move lista para o final de contato
+//contato.insertBefore(lista, titulo); // insere a lista antes de titulo
+//contato.removeChild(titulo); // remove titulo de contato
+//contato.replaceChild(lista, titulo); // substitui titulo por lista
+
+ 
