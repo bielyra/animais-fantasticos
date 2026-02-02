@@ -218,7 +218,7 @@ cursor: pointer;
 
 .js-tabcontent section{
     display: none;
-    animation: show .8s forwards;
+    animation: show .5s forwards;
 }
 
 .js-tabcontent section.ativo {
@@ -234,4 +234,31 @@ cursor: pointer;
     opacity: 1;
     transform: translate3d(0,0,0);
   }
+}
+@keyframes slideDown{
+  from{
+    opacity: 0;
+    transform: translate3d(0,-20px,0);
+  }
+  to{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.js-accordion dd{
+    display: none;
+    animation: slideDown .5s ;
+}
+
+.js-accordion dd.ativo{
+    display: block !important;
+}
+.js-accordion dt::after{
+    content: " ↴";
+    margin-left: 10px;
+}
+.js-accordion dt.ativo::after{
+    content: "⬏";
+    margin-left: 15px;
 }
