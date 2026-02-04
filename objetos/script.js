@@ -9,11 +9,11 @@
 }
 */
 function Pessoa() {
-    this.nome = 'Nome pessoa';
-    this.idade = 0;
-    this.andar = function () {
-        console.log(this.nome + ' andou');
-    }
+  this.nome = 'Nome pessoa';
+  this.idade = 0;
+  this.andar = function () {
+    console.log(this.nome + ' andou');
+  }
 }
 // Crie 3 pessoas, João - 20 anos,
 // Maria - 25 anos, Bruno - 15 anos
@@ -36,18 +36,18 @@ bruno.idade = 15;
 // removeClass(classe), remove a classe a todos os elementos
 
 function Dom(seletor) {
-    const elementList = document.querySelectorAll(seletor);
-    this.elements = elementList;
-    this.addClass = function (classe) {
-        this.elements.forEach((element) => {
-            element.classList.add(classe);
-        });
-    };
-    this.removeClass = function (classe) {
-        this.elements.forEach((element) => {
-            element.classList.remove(classe);
-        });
-    }
+  const elementList = document.querySelectorAll(seletor);
+  this.elements = elementList;
+  this.addClass = function (classe) {
+    this.elements.forEach((element) => {
+      element.classList.add(classe);
+    });
+  };
+  this.removeClass = function (classe) {
+    this.elements.forEach((element) => {
+      element.classList.remove(classe);
+    });
+  }
 }
 const listaItens = new Dom('li');
 const ul = new Dom('ul');
@@ -81,11 +81,154 @@ if (resposta) {
 } */
 
 // prototype 1 - aula 0402
-function Pessoa(nome, idade) {
-  this.nome = nome;
-  this.idade = idade;
+/* function Pessoa(nome, idade) {
+ this.nome = nome;
+ this.idade = idade;
 }
 const andre = new Pessoa('André', 28);
-
+ 
 console.log(Pessoa.prototype); // retorna o objeto
 console.log(andre.prototype); // undefined
+*/
+// Crie uma função construtora de Pessoas
+// Deve conter nome, sobrenome e idade
+// Crie um método no protótipo que retorne
+// o nome completo da pessoa
+/* 
+function Pessoa(nome, sobrenome, idade) {
+  this.nome = nome;
+  this.sobrenome = sobrenome;
+  this.idade = idade;
+}
+
+Pessoa.prototype.nomeCompleto = function() {
+  return `${this.nome} ${this.sobrenome}`;
+}
+const pessoa1 = new Pessoa('João', 'Silva', 30);
+console.log(pessoa1.nomeCompleto());
+console.log(pessoa1.idade);
+
+
+// Liste os métodos acessados por 
+// dados criados com NodeList,
+// HTMLCollection, Document
+
+// Liste os construtores dos dados abaixo
+const li = document.querySelector('li');
+
+li; //HTMLLIElement
+li.click; //funcao
+li.innerText; //string
+li.value; //number
+li.hidden; //boolean
+li.offsetLeft; // number
+li.click(); //undefined
+
+// Qual o construtor do dado abaixo:
+li.hidden.constructor.name;  // String, pois o valor de li.hidden é boolean, e o construtor de boolean é String
+
+// Liste 5 objetos nativos
+
+Array
+String
+Object
+Number
+Boolean
+
+// Liste 5 objetos do browser
+
+Window
+Document
+Element
+NodeList
+HTMLCollection
+History
+
+// Liste 2 Métodos, Propriedades ou Objetos
+// presentes no Chrome que não existem no Firefox
+
+USB
+Serial
+
+// Utilizando o foreach na array abaixo,
+// some os valores de Taxa e os valores de Recebimento */
+
+const transacoes2 = [
+  {
+    descricao: 'Taxa do Pão',
+    valor: 'R$ 39',
+  },
+  {
+    descricao: 'Taxa do Mercado',
+    valor: 'R$ 129',
+  },
+  {
+    descricao: 'Recebimento de Cliente',
+    valor: 'R$ 99',
+  },
+  {
+    descricao: 'Taxa do Banco',
+    valor: 'R$ 129',
+  },
+  {
+    descricao: 'Recebimento de Cliente',
+    valor: 'R$ 49',
+  },
+];
+
+
+let taxaTotal = 0;
+let recebimentoTotal = 0;
+transacoes2.forEach((item) => {
+  const valorLimpo = +item.valor.replace('R$ ', '');
+  if (item.descricao.slice(0, 4) === 'Taxa') {
+    taxaTotal += valorLimpo;
+  } else if (item.descricao.slice(0, 4) === 'Rece') {
+    recebimentoTotal += valorLimpo;
+  }
+
+});
+
+
+console.log(taxaTotal);
+console.log(recebimentoTotal);
+
+
+
+// Retorne uma array com a lista abaixo
+const transportes = 'Carro;Avião;Trem;Ônibus;Bicicleta';
+const arrayTransportes = transportes.split(';');
+console.log(arrayTransportes);
+
+
+
+// Substitua todos os span's por a's
+let html = `<ul>
+                <li><span>Sobre</span></li>
+                <li><span>Produtos</span></li>
+                <li><span>Contato</span></li>
+              </ul>`;
+
+html = html.split('span').join('a');
+console.log(html);
+
+
+
+// Retorne o último caracter da frase
+const frase = 'Melhor do ano!';
+console.log(frase.charAt(frase.length -1));
+console.log(frase.slice (-1));
+
+
+// Retorne o total de taxas
+const transacoes = ['Taxa do Banco', '   TAXA DO PÃO', '  taxa do mercado', 'depósito Bancário', 'TARIFA especial'];
+
+let taxasTotal = 0;
+
+transacoes.forEach((item) =>{
+  item = item.toLowerCase().trim().slice(0,4);
+  if(item === 'taxa')
+    taxasTotal++
+})
+
+console.log(`Em transações, possui o total de ${taxasTotal} taxas`);
