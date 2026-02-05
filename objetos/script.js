@@ -152,7 +152,7 @@ Serial
 
 // Utilizando o foreach na array abaixo,
 // some os valores de Taxa e os valores de Recebimento */
-
+/* 
 const transacoes2 = [
   {
     descricao: 'Taxa do Pão',
@@ -232,3 +232,84 @@ transacoes.forEach((item) =>{
 })
 
 console.log(`Em transações, possui o total de ${taxasTotal} taxas`);
+
+
+// Retorne um número aleatório
+// entre 1050 e 2000
+
+const numAleatorio = Math.floor(Math.random() * (2000 - 1050 + 1) + 1050)
+console.log(numAleatorio);
+
+
+// Retorne o maior número da lista abaixo
+const numeros = '4, 5, 20, 8, 9';
+/////////////////////////////////////////////////////////////
+//console.log(Math.max(inteiros));
+const maior = Math.max(...numeros.split(', ').map(Number));
+console.log(maior); 
+
+//////////////////////////////////////////////////////////
+const arrayNumeros = numeros.split(', ');
+console.log(arrayNumeros);
+
+let numMaior = -Infinity;
+
+arrayNumeros.forEach((item) =>{
+  
+  const num = Number(item);
+
+  if(num > numMaior){
+    numMaior = num;
+  }
+});
+console.log(numMaior);
+
+
+
+// Crie uma função para limpar os preços
+// e retornar os números com centavos arredondados
+// depois retorne a soma total
+const listaPrecos = ['R$ 59,99', ' R$ 100,222',
+                     'R$ 230  ', 'r$  200'];
+
+function limparPrecos(preco){
+  preco = +preco.toUpperCase().replace('R$', '').trim().replace(',','.');
+  preco = +preco.toFixed(2);
+  return preco;
+}
+
+
+let soma = 0;
+
+listaPrecos.forEach((preco) =>{
+  soma += limparPrecos(preco);
+  
+})
+
+console.log(soma);
+
+limparPrecos(listaPrecos[0]);
+
+ */
+
+/////////// Arrays - 0406 
+const instrumentos = ['Guitarra', 'Baixo', 'Violão'];
+const precos = [49, 99, 69, 89];
+
+const dados = [new String('Tipo 1'), ['Carro', 'Portas', {cor: 'Azul', preco: 2000}], function andar(nome) { console.log(nome) }];
+
+dados[2]('Ford');
+
+dados[1][2].cor; // azul
+
+let li = document.querySelectorAll('li'); // NodeList
+li = Array.from(li); // Array
+
+const carros = {
+  0: 'Fiat',
+  1: 'Honda',
+  2: 'Ford',
+  length: 4,
+}
+
+const carrosArray = Array.from(carros);
