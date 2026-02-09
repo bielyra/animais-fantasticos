@@ -293,14 +293,14 @@ limparPrecos(listaPrecos[0]);
  */
 
 /////////// Arrays - 0406 
-const instrumentos = ['Guitarra', 'Baixo', 'Violão'];
+/* const instrumentos = ['Guitarra', 'Baixo', 'Violão'];
 const precos = [49, 99, 69, 89];
 
 const dados = [new String('Tipo 1'), ['Carro', 'Portas', {cor: 'Azul', preco: 2000}], function andar(nome) { console.log(nome) }];
 
 dados[2]('Ford');
 
-dados[1][2].cor; // azul
+console.log(dados[1][2].cor) // azul
 
 let li = document.querySelectorAll('li'); // NodeList
 li = Array.from(li); // Array
@@ -313,3 +313,80 @@ const carros = {
 }
 
 const carrosArray = Array.from(carros);
+
+const frutas = ['Banana', 'Pêra', ['Uva Roxa', 'Uva Verde']];
+frutas.length; // 3
+
+frutas[0].length; // 6
+frutas[1].length; // 4
+frutas[2].length; // 2
+
+array = new Array(1,4,6,2,3,4,7,8,9,5,78,9,52,43,62,12)
+
+console.log(array.sort((a, b) => a - b))
+console.log(array.sort((a, b) => b - a))
+////////////////////////////////////////////////////
+*/
+const comidas = ['Pizza', 'Frango', 'Carne', 'Macarrão']; 
+
+// Remova o primeiro valor de comidas e coloque em uma variável
+const primeiroValor = comidas.shift();
+console.log(primeiroValor);
+
+// Remova o último valor de comidas e coloque em uma variável
+const ultimoValor = comidas.pop();
+console.log(ultimoValor);
+
+// Adicione 'Arroz' ao final da array
+comidas.push('Arroz');
+
+// Adicione 'Peixe' e 'Batata' ao início da array
+comidas.unshift('Peixe', 'Batata');
+
+
+console.log(comidas);
+
+
+
+
+const estudantes = ['Marcio', 'Brenda', 'Joana', 'Kleber', 'Julia'];
+// Arrume os estudantes em ordem alfabética
+estudantes.sort();
+
+// Inverta a ordem dos estudantes
+estudantes.reverse();
+
+// Verifique se Joana faz parte dos estudantes
+console.log(estudantes.includes('Joana'));
+
+
+// Verifique se Juliana faz parte dos estudantes
+console.log(estudantes.includes('Juliana'));
+
+
+console.log(estudantes);
+
+let html = `<section>
+              <div>Sobre</div>
+              <div>Produtos</div>
+              <div>Contato</div>
+            </section>`
+// Substitua section por ul e div com li,
+// utilizando split e join
+
+html = html.split('section').join('ul').split('div').join('li');
+console.log(html);
+
+
+
+const carros = ['Ford', 'Fiat', 'VW', 'Honda'];
+// Remova o último carro, mas antes de remover
+// salve a array original em outra variável
+
+const antigoArrayCarros = carros.slice();
+console.log(carros.pop());
+console.log(carros);
+console.log(antigoArrayCarros);
+
+
+
