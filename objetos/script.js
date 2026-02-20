@@ -512,5 +512,25 @@ const h1Titulo = criarElemento.bind(null, 'h1', 'titulo')
 console.log(h1Titulo('Cursos de JavaScript'));
 console.log(h1Titulo('Cursos de HTML'));
 
+/// 0409 Object
 
 
+
+// Crie uma função que verifique
+// corretamente o tipo de dado
+
+// Crie um objeto quadrado com
+// a propriedade lados e torne
+// ela imutável
+
+// Previna qualquer mudança
+// no objeto abaixo
+const configuracao = {
+  width: 800,
+  height: 600,
+  background: '#333'
+}
+
+// Liste o nome de todas
+// as propriedades do
+// protótipo de String e Array
