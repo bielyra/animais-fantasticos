@@ -8,9 +8,9 @@ export default function initModal(){
 
     console.log(botaoAbrir,botaoFechar,containerModal);
     
-function abrirModal(event){
+function toggleModal(event){
     event.preventDefault();
-    containerModal.classList.add('ativo');
+    containerModal.classList.toggle('ativo');
 }
 function fecharModal(event){
     event.preventDefault();
@@ -19,9 +19,9 @@ function fecharModal(event){
 function cliqueForaModal(event){
     
     if(event.target === this)
-    fecharModal(event);
+    toggleModal(event);
 }
 
-botaoAbrir.addEventListener('click', abrirModal);
-botaoFechar.addEventListener('click', fecharModal);
-containerModal.addEventListener('click', cliqueForaModal);
+botaoAbrir.addEventListener('click', toggleModal);
+botaoFechar.addEventListener('click', toggleModal);
+containerModal.addEventListener('click', cliqueForaModal);  
