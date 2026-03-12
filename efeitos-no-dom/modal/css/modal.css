@@ -6,14 +6,14 @@
     top: 0;
     left: 0;
     z-index: 2000;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
 
 .modal-container.ativo{
     /* display: flex; só não está display flex pq estou testando coisas. quando terminar, o modal ativo vira display flex e o modal-container vira o "inativo", display none. */
-    display: none;
+    display: flex;
 }
 
 .modal{
