@@ -12,10 +12,10 @@ export default function initModal() {
         event.preventDefault();
         containerModal.classList.toggle('ativo');
     }
-    function fecharModal(event) {
+    /* function fecharModal(event) {
         event.preventDefault();
         containerModal.classList.remove('ativo');
-    }
+    } */
     function cliqueForaModal(event) {
 
         if (event.target === this)
